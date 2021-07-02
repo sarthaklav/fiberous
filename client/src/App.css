@@ -1,11 +1,13 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-areas: "head"
+    "main"
+    "footer";
+  grid-template-rows: 100px 500px 200px;
+  grid-template-columns: 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,15 +26,46 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+.header {
+  grid-area: head;
+  background-color: ;
+  margin-bottom: 1rem;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.products-page {
+  grid-area: main;
+  display: grid;
+  grid-template-areas: "aside content";
+  grid-template-columns: 1fr 5fr;
+}
+
+.side-nav {
+  grid-area: aside;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: .5rem;
+}
+
+.side-nav-heading {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+.float-left {
+  float: left;
+}
+
+.container-products {
+
+  grid-area: content;
+  display: flex;
+  flex-wrap: wrap;
 }
