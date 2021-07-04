@@ -10,10 +10,13 @@ export function Navbar() {
         <div className="navbar-collapse">
           <ul className="navbar-nav-list">
             <li>
-              <NavLink to="/">Link one </NavLink>
+              <NavLink to="/products">Products </NavLink>
             </li>
             <li>
-              <NavLink to="/">Link two </NavLink>
+              <NavLink to="/cart">Cart </NavLink>
+            </li>
+            <li>
+              <NavLink to="/">Wishlist </NavLink>
             </li>
           </ul>
           <form action="" className="navbar-form">

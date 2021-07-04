@@ -26,14 +26,9 @@
   color: white;
 }
 
-
-
-
 .header {
   grid-area: head;
-  background-color: ;
   margin-bottom: 1rem;
-
 }
 
 .products-page {
@@ -68,4 +63,51 @@
   grid-area: content;
   display: flex;
   flex-wrap: wrap;
+}
+
+
+
+/*
+Cart styles below
+*/
+
+.cart {
+  margin: 2rem 6rem;
+}
+
+.cart-head {
+  display: flex;
+  width: 100%;
+  background-color: darkgrey;
+}
+
+.cart-item {
+  display: flex;
+  padding-top: .5rem;
+  border-top: 1px solid gray;
+}
+
+.cart-pill {
+  padding: 1rem;
+}
+
+.description {
+  display: flex;
+  width: 50%;
+}
+
+.price {
+  width: 11.5%;
+}
+
+.quantity {
+  width: 15%;
+}
+
+.subtotal {
+  width: 12.5%;
+}
+
+.savings {
+  width: 11%;
 }

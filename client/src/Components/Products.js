@@ -1,6 +1,8 @@
+import { useCart } from "../Contexts/cart-context";
 import products from "../data";
 
 export function Products() {
+  const { dispatch } = useCart();
   return (
     <>
       <div className="products-page">
@@ -97,7 +99,7 @@ export function Products() {
               className="card"
               style={{ margin: "1rem", flex: "200px", minWidth: "100px" }}
             >
-              <img src={`${product.image}`} />
+              <img src={`${product.image}`} alt="product image" />
 
               <div className="card-details">
                 <h4 className="side-nav-heading">{product.name}</h4>
@@ -108,7 +110,14 @@ export function Products() {
               </div>
               <button className="btn btn-light">+</button>
               <button className="btn btn-light">-</button>
-              <button className="btn btn-secondary">Add to cart</button>
+              <button
+                onClick={() =>
+                  dispatch({ type: "ADD_TO_CART", payload: product })
+                }
+                className="btn btn-secondary"
+              >
+                Add to cart
+              </button>
             </div>
           ))}
         </div>
