@@ -93,7 +93,7 @@ Cart styles below
 
 .description {
   display: flex;
-  width: 50%;
+  width: 40%;
 }
 
 .price {
@@ -110,4 +110,8 @@ Cart styles below
 
 .savings {
   width: 11%;
+}
+
+.remove {
+  width: 10%;
 }
