@@ -4,10 +4,21 @@ const CartContext = createContext();
 const cart = [
   {
     id: 1,
-    name: "cart wala item",
+    name: "First item in cart",
     image: "http://krisaru.com/wp-content/uploads/2011/06/vege.jpg",
     quantity: 1,
     price: 25,
+    inOffer: true,
+    offer: 5,
+  },
+  {
+    id: 2,
+    name: "Another item in cart",
+    image: "http://krisaru.com/wp-content/uploads/2011/06/vege.jpg",
+    quantity: 1,
+    price: 52,
+    inOffer: false,
+    offer: 5,
   },
 ];
 

@@ -96,8 +96,17 @@ Cart styles below
   width: 40%;
 }
 
+.description img {
+  width: 150px;
+}
+
 .price {
   width: 11.5%;
+}
+
+.actual-price {
+  text-decoration: line-through;
+  font-size: small;
 }
 
 .quantity {
@@ -109,9 +118,59 @@ Cart styles below
 }
 
 .savings {
+
   width: 11%;
+}
+
+.savings-head {
+  margin-left: auto;
+}
+
+.savings-data {
+  color: red;
 }
 
 .remove {
   width: 10%;
+}
+
+.cart-final-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-box {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  padding: .5rem;
+  /* margin: 1rem; */
+  border: 1px solid black;
+  border-radius: .5rem;
+  flex-wrap: wrap;
+}
+
+.cart-price {
+  flex-basis: 70%;
+}
+
+.cart-savings-price {
+
+  flex-basis: 30%;
+  margin-left: auto;
+
+}
+
+.checkout-box-price {
+  display: flex;
+}
+
+.cart-reset-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  margin-bottom: 1.5rem;
 }

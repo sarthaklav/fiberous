@@ -106,10 +106,7 @@ export function Products() {
                 <span>
                   Rs.{product.price} for {product.packet}{" "}
                 </span>
-                {/* <p>{product.description}</p> */}
               </div>
-              <button className="btn btn-light">+</button>
-              <button className="btn btn-light">-</button>
               <button
                 onClick={() =>
                   dispatch({ type: "ADD_TO_CART", payload: product })

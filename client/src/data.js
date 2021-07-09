@@ -3,20 +3,20 @@ import faker from "faker";
 faker.seed(123);
 
 const products = [...Array(20)].map((item) => ({
-  id: faker.random.uuid(),
+  id: faker.datatype.uuid(),
   name: faker.commerce.productName(),
   image: faker.image.image(),
   price: faker.commerce.price(),
   description: faker.commerce.productDescription(),
   category: faker.commerce.department(),
   rating: faker.random.arrayElement([1, 2, 3, 4, 5]),
-  offer: faker.random.arrayElement([
-    "Save 20",
-    "10% bonanza",
-    "Republic Day Sale",
-  ]),
-  inStock: faker.random.boolean(),
-  fastDelivery: faker.random.boolean(),
+
+  inOffer: faker.datatype.boolean(),
+
+  inOffer: true,
+  offer: faker.random.arrayElement([5, 10, 15, 20, 25]),
+  inStock: faker.datatype.boolean(),
+  fastDelivery: faker.datatype.boolean(),
 }));
 
 export default products;
