@@ -1,9 +1,9 @@
 import { useCart } from "../Contexts/cart-context.js";
-import { NavLink } from "react-router-dom";
-// import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 export function Cart() {
   const { cart, dispatch } = useCart();
-  function getTotalPrice(price) {
+  console.log(`cart length is ${cart.length} from line 3`);
+  function getTotalPrice() {
     const Total = cart.reduce((acc, item) => {
       return (
         acc +
@@ -24,7 +24,13 @@ export function Cart() {
     }, 0);
     return TotalSavings;
   }
-  return (
+
+  return cart.length === 0 ? (
+    <h3>
+      There is nothing to show in cart. Browse{" "}
+      <Link to={"/products"}>products</Link> to add
+    </h3>
+  ) : (
     <>
       <div className="cart">
         <div className="cart-head">
@@ -39,10 +45,10 @@ export function Cart() {
             ? item.price - (item.price * item.offer) / 100
             : item.price;
           return (
-            <div className="cart-item">
+            <div className="cart-item" key={item.id}>
               <div className="description">
                 <div>
-                  <img src={`${item.image}`} />
+                  <img src={`${item.image}`} alt="" />
                 </div>
                 <div>
                   <h4 className="cart-pill">{item.name}</h4>
@@ -59,7 +65,10 @@ export function Cart() {
                   <button
                     disabled={item.quantity <= 1}
                     onClick={() =>
-                      dispatch({ type: "DECREMENT_QUANTITY", payload: item.id })
+                      dispatch({
+                        type: "DECREMENT_QUANTITY",
+                        payload: item.id,
+                      })
                     }
                   >
                     -
@@ -67,7 +76,10 @@ export function Cart() {
                   <span>{item.quantity}</span>
                   <button
                     onClick={() =>
-                      dispatch({ type: "INCREMENT_QUANTITY", payload: item.id })
+                      dispatch({
+                        type: "INCREMENT_QUANTITY",
+                        payload: item.id,
+                      })
                     }
                   >
                     +
@@ -102,9 +114,12 @@ export function Cart() {
 
         <div className="cart-final-options">
           <div className="cart-reset-box">
-            <NavLink to="" className="btn btn-cancel">
+            <button
+              className="btn btn-cancel"
+              onClick={() => dispatch({ type: "RESET_CART" })}
+            >
               Reset
-            </NavLink>
+            </button>
             <NavLink to="/products" className="btn btn-primary">
               Continue Shopping
             </NavLink>
@@ -120,7 +135,7 @@ export function Cart() {
             </div>
 
             <div>
-              <NavLink to="" className="btn btn-secondary">
+              <NavLink to="/address" className="btn btn-secondary">
                 Checkout
               </NavLink>
             </div>
