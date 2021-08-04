@@ -16,7 +16,7 @@ export function Navbar() {
               <NavLink to="/cart">Cart </NavLink>
             </li>
             <li>
-              <NavLink to="/">Wishlist </NavLink>
+              <NavLink to="/address">Address </NavLink>
             </li>
           </ul>
           <form action="" className="navbar-form">

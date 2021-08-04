@@ -144,7 +144,6 @@ Cart styles below
   flex-direction: column;
   background-color: lightgray;
   padding: .5rem;
-  /* margin: 1rem; */
   border: 1px solid black;
   border-radius: .5rem;
   flex-wrap: wrap;
@@ -171,6 +170,54 @@ Cart styles below
   justify-content: space-between;
 }
 
-.btn {
-  margin-bottom: 1.5rem;
+
+/* 
+  address form css below
+*/
+.container-form {
+  padding: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
+.link {
+  height: fit-content;
+  padding: .2rem .5rem;
+  margin: .3rem;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-row-item {
+  padding: .5rem;
+}
+
+/* label {
+  display: inline-block;
+  width: 100%;
+  float: left;
+}
+
+input {
+  width: 100%;
+} */
+
+.thirty-percent {
+  width: 30%;
+}
+
+.fourty-percent {
+  width: 40%;
+}
+
+.sixty-percent {
+  width: 60%;
+}
+
+.seventy-percent {
+  width: 70%;
 }
