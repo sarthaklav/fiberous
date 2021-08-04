@@ -46,11 +46,13 @@ function reducerFunc(state, action) {
         ),
       };
     case "REMOVE_FROM_CART":
-      console.log(`line no 38 and remove from cart case is running`);
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload),
       };
+
+    case "RESET_CART":
+      return { ...state, cart: [] };
     default:
       return state;
   }
