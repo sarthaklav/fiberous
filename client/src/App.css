@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   display: grid;
   grid-template-areas: "head"
     "main"
@@ -59,7 +58,6 @@
 }
 
 .container-products {
-
   grid-area: content;
   display: flex;
   flex-wrap: wrap;
@@ -172,52 +170,89 @@ Cart styles below
 
 
 /* 
-  address form css below
+  address  css below
 */
-.container-form {
-  padding: .5rem;
-  margin-left: auto;
-  margin-right: auto;
+
+.container-address-home {
+
   width: 60%;
+  max-width: 500px;
+  padding: .5rem;
+  margin-left: 7rem;
 }
 
-
-.link {
-  height: fit-content;
-  padding: .2rem .5rem;
-  margin: .3rem;
+.container-address {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.form-row {
+.container-form {
+  display: block;
+}
+
+.form {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: white;
+  border: none;
+}
+
+.form label {
+  font-weight: bold;
+  font-size: small;
+}
+
+/* .input-text */
+
+.form input {
+  display: block;
+  width: 100%;
+  height: 1.7rem;
+  border: 1px solid grey;
+  border-radius: .2rem;
+}
+
+.form-btn {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+.form-btn input {
+  width: auto;
+}
+
+.address-box-item {
+  padding: 0;
+}
+
+.address-box-pill {
+  list-style: none;
+  font-size: small;
+}
+
+.address-box-pill:nth-child(1) {
+  font-size: large;
+}
+
+.link-address {
+  margin-left: 0;
+}
+
+.address-box-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-box-links-2 {
   display: flex;
 }
 
-.form-row-item {
-  padding: .5rem;
+.link-edit {
+  width: 50%;
 }
 
-/* label {
-  display: inline-block;
-  width: 100%;
-  float: left;
-}
-
-input {
-  width: 100%;
-} */
-
-.thirty-percent {
-  width: 30%;
-}
-
-.fourty-percent {
-  width: 40%;
-}
-
-.sixty-percent {
-  width: 60%;
-}
-
-.seventy-percent {
-  width: 70%;
+.link-delete {
+  width: 50%;
 }

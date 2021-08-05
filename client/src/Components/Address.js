@@ -15,6 +15,45 @@ const initialAddress = [
     state: "Uttar Pradesh",
     pincode: 201305,
   },
+  {
+    id: 2,
+    name: "Sarthak",
+    mobileNumber: "7023511335",
+    nickName: "home",
+    houseNo: 1304,
+    buildingBlockTower: "Tower 28",
+    apartmentColonySociety: "Paras tierea",
+    sector: "sector 137",
+    city: "Noida",
+    state: "Uttar Pradesh",
+    pincode: 201305,
+  },
+  {
+    id: 3,
+    name: "Sarthak",
+    mobileNumber: "7023511335",
+    nickName: "home",
+    houseNo: 1304,
+    buildingBlockTower: "Tower 28",
+    apartmentColonySociety: "Paras tierea",
+    sector: "sector 137",
+    city: "Noida",
+    state: "Uttar Pradesh",
+    pincode: 201305,
+  },
+  {
+    id: 4,
+    name: "Sarthak",
+    mobileNumber: "7023511335",
+    nickName: "home",
+    houseNo: 1304,
+    buildingBlockTower: "Tower 28",
+    apartmentColonySociety: "Paras tierea",
+    sector: "sector 137",
+    city: "Noida",
+    state: "Uttar Pradesh",
+    pincode: 201305,
+  },
 ];
 function addressReducer(state, action) {
   return {
@@ -58,47 +97,65 @@ export function Address() {
   }
   return (
     <div>
-      <div style={{ display: "flex" }}>
-        {addresState.initialAddress.map((addressItem) => {
-          return (
-            <div key={addressItem.id} style={{ border: "1px solid black" }}>
-              <h4>{addressItem.nickName}</h4>
-              <p>Name:{addressItem.name}</p>
-              <p>Mobile:{addressItem.mobileNumber}</p>
-              <p>House/Flat No:{addressItem.houseNo}</p>
-              <p>Building/Block/Tower:{addressItem.buildingBlockTower}</p>
-              <p>
-                Apartment/Colony/Society{addressItem.apartmentColonySociety}
-              </p>
-              <p>Sector:{addressItem.sector}</p>
-              <p>City:{addressItem.city}</p>
-              <p>State:{addressItem.state}</p>
-              <p>PIN:{addressItem.pincode}</p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="container-form">
-        <h3>Deleivery Address</h3>
-        <form className="form" onSubmit={(event) => HandleSubmit(event)}>
-          <div className="form-row">
-            <div className="form-row-item fourty-percent">
+      <div className="container-address-home">
+        <div className="container-address">
+          {addresState.initialAddress.map((addressItem) => {
+            return (
+              <div key={addressItem.id}>
+                <ul className="address-box-item">
+                  <li className="address-box-pill">
+                    <b>{addressItem.name}</b>
+                  </li>
+                  <li className="address-box-pill">{addressItem.houseNo}</li>
+                  <li className="address-box-pill">
+                    {addressItem.buildingBlockTower}
+                  </li>
+                  <li className="address-box-pill">
+                    {addressItem.apartmentColonySociety}
+                  </li>
+                  <li className="address-box-pill">{addressItem.sector}</li>
+                  <li className="address-box-pill">{addressItem.city}</li>
+                  <li className="address-box-pill">{addressItem.state}</li>
+                  <li className="address-box-pill">{addressItem.pincode}</li>
+                </ul>
+                <div className="address-box-links">
+                  <div>
+                    <button className="link link-primary link-address">
+                      Deliver to this address
+                    </button>
+                  </div>
+                  <div className="address-box-links-2">
+                    <button className="link link-secondary link-address link-edit">
+                      Edit
+                    </button>
+                    <button className="link link-secondary link-address link-delete">
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className="container-form">
+          <h3>Add new delivery address</h3>
+          <form className="form" onSubmit={(event) => HandleSubmit(event)}>
+            <div className="form-item">
               <label>Name </label>
               <input
                 type="text"
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
-            <div className="form-row-item sixty-percent">
+            <div className="form-item">
               <label>Mobile</label>
               <input
                 type="text"
                 onChange={(event) => setMobileNumber(event.target.value)}
               />
             </div>
-          </div>
-          <div className="form-row">
-            <div className="form-row-item thirty-percent">
+
+            <div className="form-item">
               <label>House No</label>
               <input
                 type="text"
@@ -107,14 +164,14 @@ export function Address() {
               />
             </div>
 
-            <div className="form-row-item thirty-percent">
+            <div className="form-item">
               <label>Building/Block/Tower</label>
               <input
                 type="text"
                 onChange={(event) => setBuildingBlockTower(event.target.value)}
               />
             </div>
-            <div className="form-row-item fourty-percent">
+            <div className="form-item">
               <label>Apartment/ colony name</label>
               <input
                 type="text"
@@ -123,56 +180,54 @@ export function Address() {
                 }
               />
             </div>
-          </div>
 
-          <div className="form-row">
-            <div className="form-row-item fourty-percent">
+            <div className="form-item">
               <label>Sector</label>
               <input
                 type="text"
                 onChange={(event) => setSector(event.target.value)}
               />
             </div>
-            <div className="form-row-item sixty-percent">
+            <div className="form-item">
               <label>Landmark</label>
               <input
                 type="text"
                 onChange={(event) => setLandmark(event.target.value)}
               />
             </div>
-          </div>
 
-          <div className="form-row">
-            <div className="form-row-item sixty-percent">
+            <div className="form-item">
               <label>City name</label>
               <input
                 type="text"
                 onChange={(event) => setCity(event.target.value)}
               />
             </div>
-            <div className="form-row-item sixty-percent">
+            <div className="form-item">
               <label>State</label>
               <input
                 type="text"
                 onChange={(event) => setState(event.target.value)}
               />
             </div>
-            <div className="form-row-item fourty-percent">
+            <div className="form-item ">
               <label>Pincode</label>
               <input
                 type="number"
                 onChange={(event) => setPincode(event.target.value)}
               />
             </div>
-          </div>
-          <div>
-            <input type="submit" />
-          </div>
-        </form>
-        {/* this will take the user to checkout and payment */}
-        <button onClick={() => history.push("/checkout")}>
-          Checkout to payment
-        </button>
+
+            <div className="form-btn">
+              <input className="input-btn  btn-light" type="reset" />
+              <input className="input-btn  btn-secondary" type="submit" />
+            </div>
+          </form>
+          {/* this will take the user to checkout and payment */}
+          <button onClick={() => history.push("/checkout")}>
+            Checkout to payment
+          </button>
+        </div>
       </div>
     </div>
   );

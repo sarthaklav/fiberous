@@ -2,7 +2,6 @@ import { useCart } from "../Contexts/cart-context.js";
 import { NavLink, Link } from "react-router-dom";
 export function Cart() {
   const { cart, dispatch } = useCart();
-  console.log(`cart length is ${cart.length} from line 3`);
   function getTotalPrice() {
     const Total = cart.reduce((acc, item) => {
       return (
