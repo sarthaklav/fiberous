@@ -21,7 +21,6 @@ export function ProductDetails() {
             </button>
           </div>
         </div>
-
         <div>
           <h3>{product.name}</h3>
           <p>{product.description}</p>

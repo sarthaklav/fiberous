@@ -40,6 +40,7 @@
 .side-nav {
   grid-area: aside;
   position: fixed;
+  top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -255,4 +256,26 @@ Cart styles below
 
 .link-delete {
   width: 50%;
+}
+
+/* Home page styles */
+
+.container-home {
+  margin: auto;
+}
+
+.slide-show {
+  position: relative;
+
+}
+
+.swipe-left {
+  position: absolute;
+  top: 50%
+}
+
+.swipe-right {
+  position: absolute;
+  top: 50%;
+  right: 0%;
 }
