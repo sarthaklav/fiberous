@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../Contexts/cart-context";
 export function ProductCard({ product }) {
-  const { dispatch: cartDispatch } = useCart();
+  const { cartDispatch } = useCart();
   return (
     <div
       key={product.id}

@@ -58,9 +58,9 @@ function reducerFunc(state, action) {
   }
 }
 export function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(reducerFunc, { cart });
+  const [state, cartDispatch] = useReducer(reducerFunc, { cart });
   return (
-    <CartContext.Provider value={{ cart: state.cart, dispatch }}>
+    <CartContext.Provider value={{ cart: state.cart, cartDispatch }}>
       {children}
     </CartContext.Provider>
   );
