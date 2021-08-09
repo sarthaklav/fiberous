@@ -70,30 +70,32 @@ export function Sidebar({
           </div>
         </div>
         <div>
-          <h4 className="side-nav-heading">Seasonal </h4>
+          <h4 className="side-nav-heading">Category </h4>
           <div>
             <label className="float-left">
               <input className="float-left" type="checkbox" />
-              Winter Fruits
+              Fruits
             </label>
           </div>
           <div>
             <label className="float-left">
               <input className="float-left" type="checkbox" />
-              Winter Veggies
+              Veggies
             </label>
           </div>
-
+        </div>
+        <div>
+          <h4 className="side-nav-heading">Seasonal</h4>
           <div>
             <label className="float-left">
               <input className="float-left" type="checkbox" />
-              Summer Fruits
+              Summer
             </label>
           </div>
           <div>
             <label className="float-left">
               <input className="float-left" type="checkbox" />
-              Summer Veggies
+              Winter
             </label>
           </div>
         </div>
