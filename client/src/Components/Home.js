@@ -31,6 +31,7 @@ export function Home() {
         </button>
         <img
           src={images[index]}
+          alt=""
           style={{ width: "750px", height: "450px", margin: "auto" }}
         />
         <button className="swipe-right" onClick={() => incrementIndex()}>

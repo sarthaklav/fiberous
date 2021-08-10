@@ -6,6 +6,13 @@ export function viewReducer(state, action) {
       return { ...state, showAllInventory: !state.showAllInventory };
     case "TOGGLE_DELIVERY":
       return { ...state, showFastDelivery: !state.showFastDelivery };
+    case "FILTER_BY_CATEGORY":
+      return {
+        ...state,
+        categories: state.categories.includes(action.payload)
+          ? state.categories.filter((category) => category !== action.payload)
+          : [...state.categories, action.payload],
+      };
     default:
       return state;
   }
@@ -20,9 +27,13 @@ export function getSortedData(productList, sortBy) {
 }
 export function getFilteredProducts(
   sortedProducts,
-  { showAllInventory, showFastDelivery }
+  { showAllInventory, showFastDelivery, categories }
 ) {
   return sortedProducts
     .filter(({ inStock }) => (showAllInventory ? true : inStock))
-    .filter(({ fastDelivery }) => (showFastDelivery ? fastDelivery : true));
+    .filter(({ fastDelivery }) => (showFastDelivery ? fastDelivery : true))
+    .filter(({ category }) => {
+      console.log(categories);
+      return categories.length !== 0 ? categories.includes(category) : true;
+    });
 }

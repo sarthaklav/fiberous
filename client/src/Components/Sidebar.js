@@ -3,7 +3,9 @@ export function Sidebar({
   sortBy,
   showAllInventory,
   showFastDelivery,
+  categories,
 }) {
+  const AllShownCategories = ["Fruits", "Vegetables"];
   return (
     <div className="side-nav">
       <aside className="">
@@ -45,7 +47,7 @@ export function Sidebar({
           </div>
         </div>
         <div>
-          <h4 className="side-nav-heading">Seasonal </h4>
+          <h4 className="side-nav-heading">Filter By </h4>
           <div>
             <label className="float-left">
               <input
@@ -71,144 +73,25 @@ export function Sidebar({
         </div>
         <div>
           <h4 className="side-nav-heading">Category </h4>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Fruits
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Veggies
-            </label>
-          </div>
-        </div>
-        <div>
-          <h4 className="side-nav-heading">Seasonal</h4>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Summer
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Winter
-            </label>
-          </div>
-        </div>
 
-        <div>
-          <h4 className="side-nav-heading">Price</h4>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Less than Rs.20
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Rs.21 to Rs.50
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Rs.51 to Rs.100
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input className="float-left" type="checkbox" />
-              Rs.101 to Rs.200
-            </label>
-          </div>
-        </div>
-        <div>
-          <h4 className="side-nav-heading">Discount</h4>
-          <div>
-            <label className="float-left">
-              <input
-                className="float-left"
-                type="checkbox"
-                onChange={() =>
-                  viewDispatch({
-                    type: "TOGGLE_OFFER_FILTER",
-                    payload: "fivePercent",
-                  })
-                }
-                checked
-              />
-              Up to 5%
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input
-                className="float-left"
-                type="checkbox"
-                onChange={() =>
-                  viewDispatch({
-                    type: "TOGGLE_OFFER_FILTER",
-                    payload: "tenPercent",
-                  })
-                }
-                checked
-              />
-              10% off
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input
-                className="float-left"
-                type="checkbox"
-                onChange={() =>
-                  viewDispatch({
-                    type: "TOGGLE_OFFER_FILTER",
-                    payload: "fifteenPercent",
-                  })
-                }
-                checked
-              />
-              15% off
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input
-                className="float-left"
-                type="checkbox"
-                onChange={() =>
-                  viewDispatch({
-                    type: "TOGGLE_OFFER_FILTER",
-                    payload: "20",
-                  })
-                }
-                checked
-              />
-              20% off
-            </label>
-          </div>
-          <div>
-            <label className="float-left">
-              <input
-                className="float-left"
-                type="checkbox"
-                onChange={() =>
-                  viewDispatch({
-                    type: "TOGGLE_OFFER_FILTER",
-                    payload: "25",
-                  })
-                }
-                checked
-              />
-              25% off
-            </label>
-          </div>
+          {AllShownCategories.map((category) => (
+            <div key={category}>
+              <label className="float-left">
+                <input
+                  className="float-left"
+                  type="checkbox"
+                  checked={categories.includes(category)}
+                  onChange={() =>
+                    viewDispatch({
+                      type: "FILTER_BY_CATEGORY",
+                      payload: category,
+                    })
+                  }
+                />
+                {category}
+              </label>
+            </div>
+          ))}
         </div>
       </aside>
     </div>

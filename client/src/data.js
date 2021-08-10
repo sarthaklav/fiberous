@@ -8,7 +8,7 @@ const products = [...Array(20)].map((item) => ({
   image: faker.image.image(),
   price: faker.commerce.price(),
   description: faker.commerce.productDescription(),
-  category: faker.random.arrayElement(["Fruit", "Vegetable"]),
+  category: faker.random.arrayElement(["Fruits", "Vegetables"]),
   season: faker.random.arrayElement(["Winter", "Summer"]),
 
   rating: faker.random.arrayElement([1, 2, 3, 4, 5]),
@@ -17,8 +17,6 @@ const products = [...Array(20)].map((item) => ({
   inOffer: faker.datatype.boolean(),
   // inOffer: true,
   offer: faker.random.arrayElement([5, 10, 15, 20, 25]),
-  inStock: faker.datatype.boolean(),
-  fastDelivery: faker.datatype.boolean(),
 }));
 
 export default products;

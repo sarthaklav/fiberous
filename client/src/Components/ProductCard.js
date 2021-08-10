@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../Contexts/cart-context";
+import products from "../data";
 export function ProductCard({ product }) {
   const { cartDispatch } = useCart();
   return (
@@ -20,6 +21,8 @@ export function ProductCard({ product }) {
         {!product.inStock && <p style={{ color: "red" }}>Out of stock </p>}
         {product.fastDelivery && <p>Fast Delivery available</p>}
         <p style={{ color: "red" }}>{product.offer}</p>
+
+        <p>{product.category}</p>
       </div>
       <button
         onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: product })}
