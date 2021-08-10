@@ -20,7 +20,7 @@ export function Products() {
     categories,
   });
   return (
-    <>
+    <div>
       <div className="products-page">
         <Sidebar
           viewDispatch={viewDispatch}
@@ -35,6 +35,6 @@ export function Products() {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

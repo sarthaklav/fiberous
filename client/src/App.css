@@ -64,6 +64,23 @@
   flex-wrap: wrap;
 }
 
+/* product card css below */
+.card {
+  margin: 1rem;
+  flex-basis: 22%;
+  min-width: 100px;
+}
+
+.packet-quantity {
+  color: gray;
+  padding: .1rem;
+}
+
+.offer {
+  color: rgb(221, 10, 10);
+  padding: .1rem;
+}
+
 
 
 /*

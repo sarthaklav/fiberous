@@ -1,35 +1,54 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../Contexts/cart-context";
-import products from "../data";
+
 export function ProductCard({ product }) {
   const { cartDispatch } = useCart();
   return (
     <div
       key={product.id}
       className="card"
-      style={{ margin: "1rem", flex: "200px", minWidth: "100px" }}
+      style={!product.inStock ? { opacity: "0.4" } : {}}
     >
-      <img src={`${product.image}`} alt="product" />
+      <div class="card-img-container badge-applied-on">
+        <img src={`${product.image}`} alt="product" />
+        <div class="badge-on-card">
+          {product.fastDelivery && <span>Fast Delivery</span>}
+          {!product.inStock && (
+            <p class="card-text-over-card-img" style={{ color: "red" }}>
+              Out of stock{" "}
+            </p>
+          )}
+        </div>
+      </div>
 
       <div className="card-details">
         <NavLink to={`/products/${product.id}`}>
           <h4 className="side-nav-heading">{product.name}</h4>
+          <div>
+            Rs.{product.price}
+            <span className="packet-quantity">
+              {" "}
+              for {product.packetQuantity}
+            </span>
+          </div>
+          <div className="offer">
+            Offer:
+            {product.offer}% Off
+          </div>
+          <p style={{ color: "red" }}></p>
+          <p>{product.category}</p>{" "}
         </NavLink>
-        <span>
-          Rs.{product.price} for {product.packet}{" "}
-        </span>
-        {!product.inStock && <p style={{ color: "red" }}>Out of stock </p>}
-        {product.fastDelivery && <p>Fast Delivery available</p>}
-        <p style={{ color: "red" }}>{product.offer}</p>
-
-        <p>{product.category}</p>
       </div>
-      <button
-        onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: product })}
-        className="btn btn-secondary"
-      >
-        Add to cart
-      </button>
+      {product.inStock && (
+        <button
+          onClick={() =>
+            cartDispatch({ type: "ADD_TO_CART", payload: product })
+          }
+          className="btn btn-secondary"
+        >
+          Add to cart
+        </button>
+      )}
     </div>
   );
 }
