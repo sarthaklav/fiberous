@@ -8,6 +8,7 @@ import { Home } from "./Components/Home";
 import { NoMatch } from "./Components/NoMatch";
 import { ProductDetails } from "./Components/ProductDetails";
 import { Login } from "./Components/Login";
+import { Signup } from "./Components/Signup";
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/signup">
+          <Signup />
         </Route>
         <Route path="/cart">
           <Cart />
