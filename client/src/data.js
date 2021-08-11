@@ -19,4 +19,6 @@ const products = [...Array(20)].map((item) => ({
   offer: faker.random.arrayElement([5, 10, 15, 20, 25]),
 }));
 
+const users = [];
+
 export default products;

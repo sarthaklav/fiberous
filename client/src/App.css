@@ -306,6 +306,10 @@ Cart styles below
   min-width: 400px;
 }
 
+.login-heading {
+  text-align: center;
+}
+
 .form-login {
   background-color: white;
   border: none;

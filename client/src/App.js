@@ -1,4 +1,3 @@
-
 import { Navbar } from "./Components/Navbar";
 import { Products } from "./Components/Products";
 import { Cart } from "./Components/Cart";
@@ -8,6 +7,7 @@ import { Address } from "./Components/Address";
 import { Home } from "./Components/Home";
 import { NoMatch } from "./Components/NoMatch";
 import { ProductDetails } from "./Components/ProductDetails";
+import { Login } from "./Components/Login";
 
 function App() {
   return (
@@ -23,6 +23,9 @@ function App() {
         </Route>
         <Route path="/products">
           <Products />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/cart">
           <Cart />

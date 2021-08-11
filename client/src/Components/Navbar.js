@@ -18,6 +18,9 @@ export function Navbar() {
             <li>
               <NavLink to="/address">Address </NavLink>
             </li>
+            <li>
+              <NavLink to="/login">Login</NavLink>
+            </li>
           </ul>
           <form action="" className="navbar-form">
             <input className="nav-input"></input>
