@@ -209,21 +209,21 @@ Cart styles below
   display: block;
 }
 
-.form {
+.address-form {
   padding-left: 0;
   padding-right: 0;
   background-color: white;
   border: none;
 }
 
-.form label {
+.form-label {
   font-weight: bold;
   font-size: small;
 }
 
 /* .input-text */
 
-.form input {
+.form-input {
   display: block;
   width: 100%;
   height: 1.7rem;
@@ -237,9 +237,7 @@ Cart styles below
   justify-content: space-between;
 }
 
-.form-btn input {
-  width: auto;
-}
+
 
 .address-box-item {
   padding: 0;
@@ -295,4 +293,21 @@ Cart styles below
   position: absolute;
   top: 50%;
   right: 0%;
+}
+
+
+/* login style below */
+.container-login {
+  margin: 0 auto auto auto;
+}
+
+.container-login-form {
+  width: 60%;
+  min-width: 400px;
+}
+
+.form-login {
+  background-color: white;
+  border: none;
+
 }

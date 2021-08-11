@@ -35,25 +35,31 @@ export function AddressForm({ addressDispatch }) {
   return (
     <div className="container-form">
       <h3>Add new delivery address</h3>
-      <form className="form" onSubmit={(event) => HandleSubmit(event)}>
+      <form
+        className="form address-form"
+        onSubmit={(event) => HandleSubmit(event)}
+      >
         <div className="form-item">
-          <label>Name </label>
+          <label className="form-label">Name </label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setName(event.target.value)}
           />
         </div>
         <div className="form-item">
-          <label>Mobile</label>
+          <label className="form-label">Mobile</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setMobileNumber(event.target.value)}
           />
         </div>
 
         <div className="form-item">
-          <label>House No</label>
+          <label className="form-label">House No</label>
           <input
+            className="form-input"
             type="text"
             placeholder={houseNo}
             onChange={(event) => setHouseNo(event.target.value)}
@@ -61,60 +67,67 @@ export function AddressForm({ addressDispatch }) {
         </div>
 
         <div className="form-item">
-          <label>Building/Block/Tower</label>
+          <label className="form-label">Building/Block/Tower</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setBuildingBlockTower(event.target.value)}
           />
         </div>
         <div className="form-item">
-          <label>Apartment/ colony name</label>
+          <label className="form-label">Apartment/ colony name</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setApartmentColonySociety(event.target.value)}
           />
         </div>
 
         <div className="form-item">
-          <label>Sector</label>
+          <label className="form-label">Sector</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setSector(event.target.value)}
           />
         </div>
         <div className="form-item">
-          <label>Landmark</label>
+          <label className="form-label">Landmark</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setLandmark(event.target.value)}
           />
         </div>
 
         <div className="form-item">
-          <label>City name</label>
+          <label className="form-label">City name</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setCity(event.target.value)}
           />
         </div>
         <div className="form-item">
-          <label>State</label>
+          <label className="form-label">State</label>
           <input
+            className="form-input"
             type="text"
             onChange={(event) => setState(event.target.value)}
           />
         </div>
         <div className="form-item ">
-          <label>Pincode</label>
+          <label className="form-label">Pincode</label>
           <input
+            className="form-input"
             type="number"
             onChange={(event) => setPincode(event.target.value)}
           />
         </div>
 
         <div className="form-btn">
-          <input className="input-btn  btn-light" type="reset" />
-          <input className="input-btn  btn-secondary" type="submit" />
+          <input className="btn btn-light" type="reset" />
+          <input className="btn btn-secondary" type="submit" />
         </div>
       </form>
       {/* this will take the user to checkout and payment */}
