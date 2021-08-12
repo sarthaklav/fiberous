@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export function Login() {
   return (
     <div className="container-login">
@@ -21,6 +23,11 @@ export function Login() {
             <input className="btn btn-secondary" type="submit" />
           </div>
         </form>
+      </div>
+      <div>
+        <span className="signup-login-link">
+          <NavLink to="/signup">Not signed up yet? Signup..</NavLink>
+        </span>
       </div>
     </div>
   );

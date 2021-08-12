@@ -297,21 +297,30 @@ Cart styles below
 
 
 /* login style below */
+.container-signup,
 .container-login {
   margin: 0 auto auto auto;
 }
 
+.container-signup-form,
 .container-login-form {
   width: 60%;
   min-width: 400px;
 }
 
+.signup-heading,
 .login-heading {
   text-align: center;
 }
 
+.form-signup,
 .form-login {
   background-color: white;
   border: none;
+}
 
+.signup-login-link {
+  display: block;
+  text-align: center;
+  margin: auto;
 }

@@ -1,11 +1,10 @@
-import { useReducer } from "react";
-
+import { NavLink } from "react-router-dom";
 export function Signup() {
   return (
-    <div className="container-login">
-      <div className="container-login-form">
-        <h1 className="login-heading">Signup</h1>
-        <form className="form form-login">
+    <div className="container-signup">
+      <div className="container-signup-form">
+        <h1 className="signup-heading">Signup</h1>
+        <form className="form form-signup">
           <div>
             <label className="form-label">
               Full name
@@ -35,6 +34,11 @@ export function Signup() {
             <input className="btn btn-secondary" type="submit" />
           </div>
         </form>
+      </div>
+      <div>
+        <span className="signup-login-link">
+          <NavLink to="/login">Already have an account! Login..</NavLink>
+        </span>
       </div>
     </div>
   );
