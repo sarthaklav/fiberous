@@ -6,7 +6,7 @@ export function AddressForm({ addressDispatch }) {
 
   const [name, setName] = useState();
   const [mobileNumber, setMobileNumber] = useState();
-  const [houseNo, setHouseNo] = useState("eg: 1304");
+  const [houseNo, setHouseNo] = useState();
   const [buildingBlockTower, setBuildingBlockTower] = useState();
   const [apartmentColonySociety, setApartmentColonySociety] = useState();
   const [sector, setSector] = useState();
@@ -61,7 +61,7 @@ export function AddressForm({ addressDispatch }) {
           <input
             className="form-input"
             type="text"
-            placeholder={houseNo}
+            placeholder="eg:1304"
             onChange={(event) => setHouseNo(event.target.value)}
           />
         </div>

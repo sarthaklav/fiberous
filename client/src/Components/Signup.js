@@ -1,32 +1,63 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+
 export function Signup() {
+  const [fullname, setFullname] = useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
+  function HandleSignupSubmit(event) {
+    // signup logic here
+    console.log("signup form submitted");
+
+    event.preventDefault();
+  }
   return (
     <div className="container-signup">
       <div className="container-signup-form">
         <h1 className="signup-heading">Signup</h1>
-        <form className="form form-signup">
+        <form
+          className="form form-signup"
+          onSubmit={(event) => HandleSignupSubmit(event)}
+        >
           <div>
             <label className="form-label">
               Full name
-              <input className="form-input" type="text" />
+              <input
+                onChange={(event) => setFullname(event.target.value)}
+                className="form-input"
+                type="text"
+              />
             </label>
           </div>
           <div>
             <label className="form-label">
               Username
-              <input className="form-input" type="text" />
+              <input
+                onChange={(event) => setUsername(event.target.value)}
+                className="form-input"
+                type="text"
+              />
             </label>
           </div>
           <div>
             <label className="form-label">
               Password
-              <input className="form-input" type="text" />
+              <input
+                onChange={(event) => setPassword(event.target.value)}
+                className="form-input"
+                type="text"
+              />
             </label>
           </div>
           <div>
             <label className="form-label">
               Confirm Password
-              <input className="form-input" type="text" />
+              <input
+                onChange={(event) => setConfirmPassword(event.target.value)}
+                className="form-input"
+                type="text"
+              />
             </label>
           </div>
           <div className="form-btn">
