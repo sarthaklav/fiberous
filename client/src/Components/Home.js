@@ -1,6 +1,6 @@
 import { useState } from "react";
 import veggie1 from "../images/veggie1.jpeg";
-import veggie2 from "../images/veggie2.jpeg";
+import veggie2 from "../images/veggie4.jpeg";
 import veggie3 from "../images/veggie3.jpeg";
 
 const images = [veggie1, veggie2, veggie3];
